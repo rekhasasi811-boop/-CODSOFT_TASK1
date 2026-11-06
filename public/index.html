@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduManage | Student Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">EduManage</div>
+    <span>Student Management System</span>
+  </header>
+  <main class="container">
+    <section class="welcome">
+      <div><p class="eyebrow">ADMIN DASHBOARD</p><h1>Manage students simply.</h1>
+      <p class="muted">Add, view, edit and remove student records in one place.</p></div>
+      <div class="badge">● System active</div>
+    </section>
+    <section class="stats">
+      <article class="stat"><span>Total students</span><strong id="totalCount">0</strong></article>
+      <article class="stat"><span>Courses</span><strong id="courseCount">0</strong></article>
+      <article class="stat"><span>Platform</span><strong>Online</strong></article>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2 id="formTitle">Add student</h2><p class="muted">Enter the student details below.</p></div></div>
+      <form id="studentForm">
+        <input type="hidden" id="studentId">
+        <label>Student name<input id="name" placeholder="Enter full name" required></label>
+        <label>Email address<input id="email" type="email" placeholder="name@example.com" required></label>
+        <label>Course<input id="course" placeholder="e.g. Full Stack Development" required></label>
+        <label>Age<input id="age" type="number" min="1" max="100" placeholder="Age"></label>
+        <div class="actions"><button type="submit" id="saveButton">Save student</button><button type="button" class="secondary" id="cancelButton" hidden>Cancel edit</button></div>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+    <section class="panel">
+      <div class="list-heading"><div><h2>Student records</h2><p class="muted">Latest records appear first.</p></div><button class="secondary" id="refreshButton">Refresh</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Course</th><th>Age</th><th>Actions</th></tr></thead><tbody id="studentRows"></tbody></table></div>
+      <p id="emptyState" class="muted">Loading student records...</p>
+    </section>
+    <footer>CodSoft Full Stack Web Development · Task 1</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
